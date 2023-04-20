@@ -2,9 +2,11 @@ import { NavLink, Link } from "react-router-dom";
 import "./header.scss";
 function Header() {
   return (
-    <header>
+    <header className="mainHeader">
       <div className="head container flex between">
-        <Link to={"/"}>/ S H O P S \_ /\ _/ L O G O \</Link>
+        <Link className="logo" to={"/"}>
+          / S H O P S \_ /\ _/ L O G O \
+        </Link>
         <nav className="navigation flex">
           <NavLink className={"navItem"} to={"/"}>
             Home

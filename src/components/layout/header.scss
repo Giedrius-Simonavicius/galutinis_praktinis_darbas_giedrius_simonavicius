@@ -1,7 +1,22 @@
-.head{
- 
-
-  .navigation{
-   gap: 1rem;
+.mainHeader{
+  background-color: #999;
+  .head{
+    .container{
+      margin-right: 0;
+    }
+    .logo{
+     font-size: 3rem;
+    }
+    .navigation{
+     gap: 1.5rem;
+    }
+    .navItem{
+      padding: 2rem;
+  
+    }
+    .navItem:hover{
+  background-color: #333;
+  color: white;
+    }
   }
 }
