@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 
-function RegisterForm({ onReg }) {
+function RegisterForm({ onUserRegistration }) {
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -9,7 +9,7 @@ function RegisterForm({ onReg }) {
     },
     onSubmit: (values) => {
       console.log('Form values:', values);
-      onReg(values);
+      onUserRegistration(values);
     },
   });
 
@@ -38,7 +38,7 @@ function RegisterForm({ onReg }) {
         />
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit">Register</button>
     </form>
   );
 }

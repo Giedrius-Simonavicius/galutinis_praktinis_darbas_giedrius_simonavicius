@@ -69,25 +69,45 @@ a {
 input,
 textarea,
 select {
-  font-size: 16px;
-  padding: 0.3em 0.8em;
-  border-radius: 4px;
-  border: 1px solid #777;
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  width: 40rem;
   display: block;
-  max-width: 300px;
-}
-textarea {
-  min-height: 5rem;
-  min-width: 500px;
-  resize: vertical;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  background-color: #ffffffb1;
+  border-radius: 1.5rem;
+  border: 0.1rem solid #fff;
+  color: #333;
 }
 
 button {
-  font-size: 16px;
-  padding: 0.3em 0.8em;
-  border-radius: 4px;
-  border: 1px solid #777;
+  font-size: 1.6rem;
+  max-width: fit-content;
+  border-radius: 1.5rem;
+  color: #333;
+  padding: 1rem 4rem;
+  border: 0.1rem solid #ffffff30;
   cursor: pointer;
+  background: linear-gradient(
+    60deg,
+    #d26b21f0 0%,
+    #b43257cb 50%,
+    #db2f96df 75%,
+    #a01b6bdf 100%
+  );
+  color: #ffffffb3;
+  transition: 0.2s;
+}
+button:hover {
+  background: linear-gradient(
+    120deg,
+    #a01b6bdf 00%,
+    #db2f96df 25%,
+    #b43257cb 50%,
+    #d26b21f0 100%
+  );
+  box-shadow: 5px 10px #888888;
 }
 
 /* themes  */

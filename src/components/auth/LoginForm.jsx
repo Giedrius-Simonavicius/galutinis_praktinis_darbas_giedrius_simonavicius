@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
-
-function LoginForm({ onLogin }) {
+import './loginForm.scss';
+function LoginForm({ onUserLogin }) {
   const formik = useFormik({
     initialValues: {
       email: 'test@test.com',
@@ -9,14 +9,14 @@ function LoginForm({ onLogin }) {
     },
     onSubmit: (values) => {
       console.log('Form values:', values);
-      onLogin(values);
+      onUserLogin(values);
     },
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form className="form" onSubmit={formik.handleSubmit}>
       <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email:</label>
         <input
           id="email"
           type="text"

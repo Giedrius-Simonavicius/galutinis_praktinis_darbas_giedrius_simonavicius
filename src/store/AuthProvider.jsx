@@ -7,6 +7,7 @@ const AuthContext = createContext({
   login() {},
   register() {},
 });
+AuthContext.displayName = 'AuthContext';
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);

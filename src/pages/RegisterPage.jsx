@@ -3,7 +3,7 @@ import RegisterForm from '../components/auth/RegisterForm';
 import { useAuthCtx } from '../store/AuthProvider';
 import { auth } from '../firebase/firebase';
 import { createUserWithEmailAndPassword } from '@firebase/auth';
-
+import './loginPage.scss';
 function RegisterPage() {
   const { register } = useAuthCtx();
   function registerToFirebase({ email, password }) {
@@ -20,8 +20,8 @@ function RegisterPage() {
   }
   return (
     <div className="container">
-      RegisterPage
-      <RegisterForm onReg={registerToFirebase} />
+      <h2>Please fill in all fields to register</h2>
+      <RegisterForm onUserRegistration={registerToFirebase} />
     </div>
   );
 }
