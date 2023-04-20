@@ -1,16 +1,26 @@
 import { NavLink, Link } from "react-router-dom";
-
+import "./header.scss";
 function Header() {
   return (
     <header>
-      <div>
+      <div className="head container flex between">
         <Link to={"/"}>/ S H O P S \_ /\ _/ L O G O \</Link>
-        <nav>
-          <NavLink to={"/"}>Home page</NavLink>
-          <NavLink to={"/login"}>Login</NavLink>
-          <NavLink to={"/register"}>Register</NavLink>
-          <NavLink to={"/shops"}>Shops</NavLink>
-          <NavLink to={"/shops/new"}>Add shop</NavLink>
+        <nav className="navigation flex">
+          <NavLink className={"navItem"} to={"/"}>
+            Home
+          </NavLink>
+          <NavLink className={"navItem"} to={"/login"}>
+            Login
+          </NavLink>
+          <NavLink className={"navItem"} to={"/register"}>
+            Register
+          </NavLink>
+          <NavLink className={"navItem"} to={"/shops"}>
+            Shops
+          </NavLink>
+          <NavLink className={"navItem"} to={"/shops/new"}>
+            Add shop
+          </NavLink>
         </nav>
       </div>
     </header>

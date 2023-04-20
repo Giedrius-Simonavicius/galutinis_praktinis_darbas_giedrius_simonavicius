@@ -1,7 +1,7 @@
 import React from "react";
 
 function AddShopPage() {
-  return <div>AddShopPage</div>;
+  return <div className="container">AddShopPage</div>;
 }
 
 export default AddShopPage;

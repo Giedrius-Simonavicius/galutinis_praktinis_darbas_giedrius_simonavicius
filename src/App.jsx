@@ -1,3 +1,5 @@
+import "./styles/App.css";
+import "./styles/reset.css";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/layout/Header";
 import LoginPage from "./pages/LoginPage";
