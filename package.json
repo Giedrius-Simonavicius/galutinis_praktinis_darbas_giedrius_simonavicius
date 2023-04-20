@@ -13,9 +13,9 @@
     "formik": "^2.2.9",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-context-api": "^1.0.2",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "sass": "^1.62.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
@@ -23,6 +23,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "eslint": "^8.38.0",
     "eslint-config-react-app": "^7.0.1",
+    "node-sass": "^8.0.0",
     "vite": "^4.2.0",
     "vite-plugin-eslint": "^1.8.1"
   }
