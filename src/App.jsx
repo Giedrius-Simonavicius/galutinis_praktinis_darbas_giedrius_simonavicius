@@ -7,6 +7,7 @@ import RegisterPage from "./pages/RegisterPage";
 import ShopsPage from "./pages/ShopsPage";
 import AddShopPage from "./pages/AddShopPage";
 import HomePage from "./pages/HomePage";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/shops" element={<ShopsPage />} />
         <Route path="/shops/new" element={<AddShopPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
