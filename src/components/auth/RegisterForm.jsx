@@ -1,11 +1,15 @@
 import React from 'react';
 import { useFormik } from 'formik';
 
-function RegisterForm() {
+function RegisterForm({ onReg }) {
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
+    },
+    onSubmit: (values) => {
+      console.log('Form values:', values);
+      onReg(values);
     },
   });
 
@@ -19,7 +23,7 @@ function RegisterForm() {
           name="email"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value=""
+          value={formik.values.email}
         />
       </div>
       <div>
@@ -30,7 +34,7 @@ function RegisterForm() {
           name="password"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value=""
+          value={formik.values.password}
         />
       </div>
 

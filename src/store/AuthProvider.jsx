@@ -12,7 +12,6 @@ function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // stebim vartojo prisijungimo busena
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
