@@ -21,12 +21,12 @@ function LoginPage() {
       });
   }
   return (
-    <div className="login">
-      <div className="innerLogin container">
-        <h1>Please login</h1>
+    <div className="mainForm">
+      <div className="innerForm container">
+        <h1>Sign in</h1>
         <LoginForm onUserLogin={loginToFirebase} />
         <div className="flex notRegistered">
-          <p>Not registered yet? </p>
+          <p>Not a member yet? </p>
           <NavLink className="clickToReg" to={'/register'}>
             click here to sign up
           </NavLink>

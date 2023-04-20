@@ -1,9 +1,10 @@
-.login {
+.mainForm {
   background: linear-gradient(45deg, #2f4e6e 0%, #84451b 50%, #782058 100%);
   padding-top: 8rem;
   padding-bottom: 8rem;
+  min-height: 85vh;
 
-  .innerLogin {
+  .innerForm {
     background-color: #efefef3e;
     border-radius: 1rem;
     padding-top: 3rem;
@@ -13,11 +14,15 @@
   h1 {
     text-align: center;
     margin-bottom: 8rem;
-    font-size: 3rem;
+    font-size: 4rem;
     color: white;
     letter-spacing: 0.2rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid white;
+  }
+  h2{
+    color: #424242;
+    margin-bottom: 3rem;
   }
 
   .notRegistered {
@@ -31,7 +36,7 @@
   .clickToReg {
     margin-left: 1rem;
     font-size: 1.3rem;
-    color: #333333;
+    color: #582222;
     font-style: italic;
     transition: 0.2s;
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import './loginForm.scss';
+import './form.scss';
 function LoginForm({ onUserLogin }) {
   const formik = useFormik({
     initialValues: {
@@ -21,6 +21,7 @@ function LoginForm({ onUserLogin }) {
           id="email"
           type="text"
           name="email"
+          placeholder="Your email"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
@@ -32,6 +33,7 @@ function LoginForm({ onUserLogin }) {
           id="password"
           type="password"
           name="password"
+          placeholder="Your password"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import './form.scss';
 
 function RegisterForm({ onUserRegistration }) {
   const formik = useFormik({
@@ -14,13 +15,14 @@ function RegisterForm({ onUserRegistration }) {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form className="form" onSubmit={formik.handleSubmit}>
       <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email:</label>
         <input
           id="email"
           type="text"
           name="email"
+          placeholder="Your email"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
@@ -32,6 +34,7 @@ function RegisterForm({ onUserRegistration }) {
           id="password"
           type="password"
           name="password"
+          placeholder="Your password"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}
