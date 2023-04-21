@@ -9,13 +9,26 @@
     margin-bottom: 1rem;
   }
   input {
-    margin-top: 1rem;
-    margin-bottom: 4rem;
     background-color: #ffffffb1;
     border-radius: 1.5rem;
     border: 0.1rem solid #fff;
   }
   button {
     margin: 3rem auto;
+  }
+
+  .errorMsg{
+    color: rgb(136, 4, 4);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    font-weight: 600;
+  }
+  .insvisible{
+    color: transparent;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    font-weight: 600;
   }
 }

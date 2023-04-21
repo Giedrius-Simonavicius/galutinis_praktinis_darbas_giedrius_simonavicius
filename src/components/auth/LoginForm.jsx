@@ -1,5 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
 import './form.scss';
 function LoginForm({ onUserLogin }) {
   const formik = useFormik({
@@ -7,6 +9,14 @@ function LoginForm({ onUserLogin }) {
       email: 'test@test.com',
       password: '123456',
     },
+
+    validationSchema: Yup.object({
+      email: Yup.email('Incorrect email format').required('Email is required'),
+      password: Yup.string()
+        .min(6, 'Minimum 6 symbols')
+        .required('Password is required'),
+    }),
+
     onSubmit: (values) => {
       console.log('Form values:', values);
       onUserLogin(values);
@@ -26,6 +36,11 @@ function LoginForm({ onUserLogin }) {
           onBlur={formik.handleBlur}
           value={formik.values.email}
         />
+        {formik.touched.email && formik.errors.email ? (
+          <div className="errorMsg">{formik.errors.email}</div>
+        ) : (
+          <div className="insvisible">insvisible</div>
+        )}
       </div>
       <div>
         <label htmlFor="password">Password</label>
@@ -38,6 +53,11 @@ function LoginForm({ onUserLogin }) {
           onBlur={formik.handleBlur}
           value={formik.values.password}
         />
+        {formik.touched.password && formik.errors.password ? (
+          <div className="errorMsg">{formik.errors.password}</div>
+        ) : (
+          <div className="insvisible">insvisible</div>
+        )}
       </div>
       <button type="submit">Login</button>
     </form>

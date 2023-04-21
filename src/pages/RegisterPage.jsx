@@ -4,6 +4,7 @@ import { useAuthCtx } from '../store/AuthProvider';
 import { auth } from '../firebase/firebase';
 import { createUserWithEmailAndPassword } from '@firebase/auth';
 import '../styles/formPage.scss';
+import { NavLink } from 'react-router-dom';
 
 function RegisterPage() {
   const { register } = useAuthCtx();
@@ -24,6 +25,12 @@ function RegisterPage() {
       <div className="container innerForm">
         <h1>Registration</h1>
         <RegisterForm onUserRegistration={registerToFirebase} />
+        <div className="flex notRegistered">
+          <p>Already registered? </p>
+          <NavLink className="clickToReg" to={'/login'}>
+            sign in
+          </NavLink>
+        </div>
       </div>
     </div>
   );
