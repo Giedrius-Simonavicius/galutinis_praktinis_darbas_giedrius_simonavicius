@@ -8,9 +8,6 @@ function Header() {
           / S H O P S \_ /\ _/ L O G O \
         </Link>
         <nav className="navigation flex">
-          <NavLink className={'navItem'} to={'/'}>
-            Home
-          </NavLink>
           <NavLink className={'navItem'} to={'/login'}>
             Login
           </NavLink>

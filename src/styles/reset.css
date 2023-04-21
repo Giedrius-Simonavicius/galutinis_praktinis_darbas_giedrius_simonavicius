@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
 }
 
 p,
@@ -113,5 +116,5 @@ button:hover {
 /* themes  */
 
 .cyanTheme {
-  background-color: #9de2d16b;
+  background-color: #74a2976b;
 }
