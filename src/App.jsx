@@ -16,9 +16,19 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route
+          path="/"
+          element={(!isLoggedIn && <LoginPage />) || <ShopsPage />}
+        />
+        <Route
+          path="/login"
+          element={(!isLoggedIn && <LoginPage />) || <ShopsPage />}
+        />
+        <Route
+          path="/register"
+          element={(!isLoggedIn && <RegisterPage />) || <ShopsPage />}
+        />
+
         <Route
           path="/shops"
           element={

@@ -15,12 +15,17 @@ function Header() {
           <i className="fa fa-building-o ico2" aria-hidden="true"></i>S H O P S
         </Link>
         <nav className="navigation flex">
-          <NavLink className={'navItem'} to={'/login'}>
-            Login
-          </NavLink>
-          <NavLink className={'navItem'} to={'/register'}>
-            Register
-          </NavLink>
+          {!isLoggedIn && (
+            <NavLink className={'navItem'} to={'/login'}>
+              Login
+            </NavLink>
+          )}
+          {!isLoggedIn && (
+            <NavLink className={'navItem'} to={'/register'}>
+              Register
+            </NavLink>
+          )}
+
           {isLoggedIn && (
             <NavLink className={'navItem'} to={'/shops'}>
               Shops
