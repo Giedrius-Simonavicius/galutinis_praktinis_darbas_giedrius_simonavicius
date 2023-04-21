@@ -7,13 +7,15 @@ const AuthContext = createContext({
   user: {},
   login() {},
   register() {},
-  navigate() {},
+  navTo() {},
+  isLoggedIn: false,
 });
 AuthContext.displayName = 'AuthContext';
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const isLoggedIn = !!user;
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -35,7 +37,7 @@ function AuthProvider({ children }) {
   function register(userObj) {
     setUser(userObj);
   }
-  function navToShops(whereTo) {
+  function navTo(whereTo) {
     navigate(`/${whereTo}`);
   }
 
@@ -43,7 +45,8 @@ function AuthProvider({ children }) {
     user,
     register,
     login,
-    navigate,
+    navTo,
+    isLoggedIn,
   };
   return (
     <AuthContext.Provider value={authCtx}>{children}</AuthContext.Provider>
