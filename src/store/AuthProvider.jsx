@@ -5,25 +5,28 @@ import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext({
   user: {},
-  login() {},
-  register() {},
+
   navTo() {},
   isLoggedIn: false,
-  logout() {},
 });
 AuthContext.displayName = 'AuthContext';
+
+const localTokenKey = 'LOCAL_TOKEN';
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const isLoggedIn = !!user;
+  const tokenFromStorage = localStorage.getItem(localTokenKey);
+  const [token, setToken] = useState(tokenFromStorage || '');
+  const isLoggedIn = !!token;
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
-        console.log('prisijungimas', user.email);
+        console.log('prisijungimas', user.token);
         setUser(user);
+        console.log('user ===', user);
       } else {
         console.log('Logout User');
         setUser(null);
@@ -31,27 +34,25 @@ function AuthProvider({ children }) {
     });
   }, []);
 
-  function login(userObj) {
-    setUser(userObj);
-  }
-  function logout() {
-    setUser(null);
-  }
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem(localTokenKey, user.accessToken);
+      setToken(user.accessToken);
+    } else {
+      localStorage.removeItem(localTokenKey);
+      setToken(null);
+    }
+  }, [user]);
 
-  function register(userObj) {
-    setUser(userObj);
-  }
   function navTo(whereTo) {
     navigate(`/${whereTo}`);
   }
 
   const authCtx = {
     user,
-    register,
-    login,
+
     navTo,
     isLoggedIn,
-    logout,
   };
   return (
     <AuthContext.Provider value={authCtx}>{children}</AuthContext.Provider>

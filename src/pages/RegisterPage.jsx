@@ -7,12 +7,10 @@ import '../styles/formPage.scss';
 import { NavLink } from 'react-router-dom';
 
 function RegisterPage() {
-  const { register } = useAuthCtx();
   function registerToFirebase({ email, password }) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        register(user);
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -58,7 +58,7 @@ function RegisterForm({ onUserRegistration }) {
         {formik.touched.password && formik.errors.password ? (
           <div className="errorMsg">{formik.errors.password}</div>
         ) : (
-          <div className="insvisible">insvisible</div>
+          <div className="insvisible"></div>
         )}
       </div>
 

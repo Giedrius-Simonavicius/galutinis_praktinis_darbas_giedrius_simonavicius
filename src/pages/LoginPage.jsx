@@ -6,14 +6,13 @@ import { useAuthCtx } from '../store/AuthProvider';
 import { NavLink } from 'react-router-dom';
 
 function LoginPage() {
-  const { login, navTo, isLoggedIn } = useAuthCtx();
+  const { navTo, isLoggedIn } = useAuthCtx();
 
   function loginToFirebase({ email, password }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log('user ===', user);
-        login(user);
         navTo('shops');
         console.log('isLoggedIn ===', isLoggedIn);
       })

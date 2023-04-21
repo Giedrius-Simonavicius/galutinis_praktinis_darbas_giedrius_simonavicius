@@ -4,12 +4,11 @@ import { useAuthCtx } from '../../store/AuthProvider';
 import { auth } from '../../firebase/firebase';
 
 function Logout() {
-  const { isLoggedIn, logout, navTo } = useAuthCtx();
+  const { isLoggedIn, navTo } = useAuthCtx();
 
   function logoutUserFire() {
     signOut(auth)
       .then(() => {
-        logout();
         navTo('login');
       })
       .catch((error) => {});
