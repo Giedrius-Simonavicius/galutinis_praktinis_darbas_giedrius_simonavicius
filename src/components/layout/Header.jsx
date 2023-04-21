@@ -5,7 +5,10 @@ function Header() {
     <header className="mainHeader cyanTheme">
       <div className="head container flex between">
         <Link className="logo" to={'/'}>
-          / S H O P S \_ /\ _/ L O G O \
+          <span className="logoOur">O U R</span>
+          <i className="fa fa-building ico1" aria-hidden="true"></i>
+          <i className="fa fa-building ico3" aria-hidden="true"></i>
+          <i className="fa fa-building-o ico2" aria-hidden="true"></i>S H O P S
         </Link>
         <nav className="navigation flex">
           <NavLink className={'navItem'} to={'/login'}>
