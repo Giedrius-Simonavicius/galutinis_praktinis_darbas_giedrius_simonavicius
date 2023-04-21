@@ -7,9 +7,11 @@ import RegisterPage from './pages/RegisterPage';
 import ShopsPage from './pages/ShopsPage';
 import AddShopPage from './pages/AddShopPage';
 import Footer from './components/layout/Footer';
-import NotFound from './pages/NotFound';
+import NotFoundPage from './pages/NotFoundPage';
+import { useAuthCtx } from './store/AuthProvider';
 
 function App() {
+  const { isLoggedIn } = useAuthCtx();
   return (
     <div>
       <Header />
@@ -17,9 +19,22 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/shops" element={<ShopsPage />} />
-        <Route path="/shops/new" element={<AddShopPage />} />
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="/shops"
+          element={
+            (isLoggedIn && <ShopsPage />) ||
+            (!isLoggedIn && <h1>Must login</h1>)
+          }
+        />
+
+        <Route
+          path="/shops/new"
+          element={
+            (isLoggedIn && <AddShopPage />) ||
+            (!isLoggedIn && <h1>Must login</h1>)
+          }
+        />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </div>
