@@ -5,7 +5,7 @@ function Footer() {
     dateStyle: 'short',
   });
   return (
-    <div className="tac cyanTheme foot">
+    <div className="tac foot">
       <p>&copy; copyright. All rights reserved {formatedDate}</p>
     </div>
   );

@@ -2,7 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import './header.scss';
 function Header() {
   return (
-    <header className="mainHeader cyanTheme">
+    <header className="mainHeader">
       <div className="head container flex between">
         <Link className="logo" to={'/'}>
           <span className="logoOur">O U R</span>

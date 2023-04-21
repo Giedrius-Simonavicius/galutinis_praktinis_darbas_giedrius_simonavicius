@@ -1,4 +1,13 @@
 .mainHeader {
+  background: linear-gradient(
+    30deg,
+    #a77d7db6 0%,
+    #bac4c26b 30%,
+    #80865c6b 45%,
+    #694d196b 50%,
+    #68827d6b 75%,
+    #a77d7db6 100%
+  );
   .head {
     .container {
       margin-right: 0;
@@ -6,36 +15,47 @@
     .logo {
       font-size: 3rem;
       font-weight: 600;
+      color: #555555ea;
+      transition: 0.2s;
+    }
+    .logo:hover {
+      color: #333;
     }
     .navigation {
-      gap: 1.5rem;
+      font-size: 1.7rem;
+      color: #333;
+      font-weight: 500;
+      letter-spacing: 0.3rem;
     }
     .navItem {
-      padding: 3rem;
+      padding: 2.5rem;
+      font-size: 1.7rem;
+      color: #333;
+      font-weight: 500;
+      letter-spacing: 0.3rem;
+      transition: all 0.2s;
     }
     .navItem:hover {
-      background-color: #333;
-      color: white;
+      background-color: #66666674;
+      color: #ffffffb5;
     }
-    
-    .logoOur{
+
+    .logoOur {
       font-size: 2rem;
       font-weight: 600;
     }
-    .ico1{
+    .ico1 {
       font-size: 3rem;
       margin-left: 1rem;
       margin-right: 0.2rem;
     }
-    .ico3{
+    .ico3 {
       font-size: 3.5rem;
       margin-right: 0.2rem;
-  
     }
-    .ico2{
+    .ico2 {
       font-size: 2.8rem;
       margin-right: 1.5rem;
-     
     }
   }
 }
