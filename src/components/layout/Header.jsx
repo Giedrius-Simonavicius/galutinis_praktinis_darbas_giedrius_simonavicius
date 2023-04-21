@@ -1,6 +1,10 @@
 import { NavLink, Link } from 'react-router-dom';
 import './header.scss';
+import { useAuthCtx } from '../../store/AuthProvider';
+import Logout from '../auth/Logout';
 function Header() {
+  const { isLoggedIn } = useAuthCtx();
+
   return (
     <header className="mainHeader">
       <div className="head container flex between">
@@ -17,13 +21,22 @@ function Header() {
           <NavLink className={'navItem'} to={'/register'}>
             Register
           </NavLink>
-          <NavLink className={'navItem'} to={'/shops'}>
-            Shops
-          </NavLink>
-          <NavLink className={'navItem'} to={'/shops/new'}>
-            Add shop
-          </NavLink>
+          {isLoggedIn && (
+            <NavLink className={'navItem'} to={'/shops'}>
+              Shops
+            </NavLink>
+          )}
+          {isLoggedIn && (
+            <NavLink className={'navItem'} to={'/shops/new'}>
+              Add shop
+            </NavLink>
+          )}
         </nav>
+        {isLoggedIn && (
+          <>
+            <Logout />
+          </>
+        )}
       </div>
     </header>
   );

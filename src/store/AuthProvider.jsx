@@ -9,6 +9,7 @@ const AuthContext = createContext({
   register() {},
   navTo() {},
   isLoggedIn: false,
+  logout() {},
 });
 AuthContext.displayName = 'AuthContext';
 
@@ -33,6 +34,9 @@ function AuthProvider({ children }) {
   function login(userObj) {
     setUser(userObj);
   }
+  function logout() {
+    setUser(null);
+  }
 
   function register(userObj) {
     setUser(userObj);
@@ -47,6 +51,7 @@ function AuthProvider({ children }) {
     login,
     navTo,
     isLoggedIn,
+    logout,
   };
   return (
     <AuthContext.Provider value={authCtx}>{children}</AuthContext.Provider>
