@@ -23,7 +23,6 @@ function RegisterPage() {
     <div className="mainForm">
       <div className="container innerForm">
         <h1>Registration</h1>
-        <h2>Please fill all fields to register</h2>
         <RegisterForm onUserRegistration={registerToFirebase} />
       </div>
     </div>

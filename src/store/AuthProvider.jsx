@@ -1,16 +1,19 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase/firebase';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext({
   user: {},
   login() {},
   register() {},
+  navigate() {},
 });
 AuthContext.displayName = 'AuthContext';
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -32,11 +35,15 @@ function AuthProvider({ children }) {
   function register(userObj) {
     setUser(userObj);
   }
+  function navToShops(whereTo) {
+    navigate(`/${whereTo}`);
+  }
 
   const authCtx = {
     user,
     register,
     login,
+    navigate,
   };
   return (
     <AuthContext.Provider value={authCtx}>{children}</AuthContext.Provider>
