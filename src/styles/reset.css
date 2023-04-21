@@ -87,16 +87,15 @@ button {
   font-size: 1.6rem;
   max-width: fit-content;
   border-radius: 1.5rem;
-  color: #333;
   padding: 1rem 4rem;
-  border: 0.1rem solid #ffffff30;
+  border: 0.1rem solid #ffffff77;
   cursor: pointer;
   background: linear-gradient(
     60deg,
-    #d26b21f0 0%,
-    #b43257cb 50%,
-    #db2f96df 75%,
-    #a01b6bdf 100%
+    #955324f0 0%,
+    #972a49cb 50%,
+    #821657df 75%,
+    #791551df 100%
   );
   color: #ffffffb3;
   transition: 0.2s;
@@ -104,10 +103,10 @@ button {
 button:hover {
   background: linear-gradient(
     120deg,
-    #a01b6bdf 00%,
-    #db2f96df 25%,
-    #b43257cb 50%,
-    #d26b21f0 100%
+    #791551df 0%,
+    #821657df 50%,
+    #972a49cb 75%,
+    #955324f0 100%
   );
-  box-shadow: 5px 10px #888888;
+  box-shadow: 5px 10px #595959;
 }

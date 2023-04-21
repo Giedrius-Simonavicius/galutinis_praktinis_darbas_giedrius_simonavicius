@@ -11,10 +11,10 @@ function LoginForm({ onUserLogin }) {
     },
 
     validationSchema: Yup.object({
-      email: Yup.email('Incorrect email format').required('Email is required'),
-      password: Yup.string()
-        .min(6, 'Minimum 6 symbols')
-        .required('Password is required'),
+      email: Yup.string()
+        .email('Incorrect email format')
+        .required('Email is required'),
+      password: Yup.string().required('Password is required'),
     }),
 
     onSubmit: (values) => {
