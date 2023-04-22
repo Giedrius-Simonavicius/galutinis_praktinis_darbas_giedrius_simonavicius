@@ -6,7 +6,7 @@ function Footer() {
   });
   return (
     <div className="tac foot">
-      <p>&copy; copyright. All rights reserved {formatedDate}</p>
+      <p>&copy; Copyright. All rights reserved {formatedDate}</p>
     </div>
   );
 }
