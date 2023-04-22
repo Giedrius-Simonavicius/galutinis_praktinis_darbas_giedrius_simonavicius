@@ -14,8 +14,7 @@
     }
     .logoDiv {
       display: flex;
-      min-width: 29rem;
-    }
+         }
     .logo {
       font-size: 3rem;
       font-weight: 600;
@@ -97,6 +96,9 @@
 
 
 @media screen and (max-width:600px) {
+  .mainHeader {
+  min-width: 39rem;
+ } 
   .mainHeader .head .navItem  {
     font-size: 1rem;
      padding: 1.5rem 0.5rem;
