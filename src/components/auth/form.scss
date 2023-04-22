@@ -1,5 +1,6 @@
 .form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   color: white;
 
@@ -36,3 +37,4 @@
     font-weight: 600;
   }
 }
+
