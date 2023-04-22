@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase/firebase';
 import { collection, getDocs } from 'firebase/firestore';
+import SingleShop from '../components/shops/SingleShop';
 
 function ShopsPage() {
   const [shopsArr, setShopsArr] = useState([]);
@@ -26,7 +27,9 @@ function ShopsPage() {
   }, []);
   return (
     <div>
-      <div>shopsPage</div>
+      {shopsArr.map((sObj) => (
+        <SingleShop key={sObj.uid} item={sObj} />
+      ))}
     </div>
   );
 }
