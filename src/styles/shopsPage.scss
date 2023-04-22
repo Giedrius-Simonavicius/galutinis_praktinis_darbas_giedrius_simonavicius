@@ -1,19 +1,18 @@
-.allShops{
+.allShops {
   background: linear-gradient(45deg, #2f4e6e 0%, #84451b 50%, #782058 100%);
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   padding: 8rem 3rem;
   min-height: 85vh;
-
 }
 
-.page{
+.page {
   background: linear-gradient(45deg, #2f4e6e 0%, #84451b 50%, #782058 100%);
   min-height: 85vh;
 
-  h2{
+  h2 {
     text-align: center;
     font-size: 2.5rem;
     letter-spacing: 0.2rem;
@@ -21,14 +20,14 @@
   }
 }
 
-@media screen and (max-width:800px) {
-  .allShops  {
-    grid-template-columns: repeat(2,1fr);
-    
-  }}
-  
-  @media screen and (max-width:500px) {
-    .allShops  {
-      grid-template-columns: repeat(1,1fr);
- 
-    }}
+@media screen and (max-width: 800px) {
+  .allShops {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .allShops {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
