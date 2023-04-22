@@ -1,6 +1,6 @@
 import './styles/App.css';
 import './styles/reset.css';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Header from './components/layout/Header';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -17,14 +17,17 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={!isLoggedIn ? <LoginPage /> : <ShopsPage />} />
+        <Route
+          path="/"
+          element={!isLoggedIn ? <LoginPage /> : <Navigate to={'/shops'} />}
+        />
         <Route
           path="/login"
-          element={!isLoggedIn ? <LoginPage /> : <ShopsPage />}
+          element={!isLoggedIn ? <LoginPage /> : <Navigate to={'/shops'} />}
         />
         <Route
           path="/register"
-          element={!isLoggedIn ? <RegisterPage /> : <ShopsPage />}
+          element={!isLoggedIn ? <RegisterPage /> : <Navigate to={'/shops'} />}
         />
 
         <Route
