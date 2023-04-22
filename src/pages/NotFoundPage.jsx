@@ -9,8 +9,7 @@ function NotFoundPage() {
   setTimeout(() => {
     isLoggedIn ? navTo('shops') : navTo('login');
   }, 5000);
-  // useEffect(() => {
-  // }, [isLoggedIn, navTo]);
+  useEffect(() => {}, [isLoggedIn, navTo]);
 
   setTimeout(() => {
     setTimer(timer - 1);
@@ -21,8 +20,10 @@ function NotFoundPage() {
 
   return (
     <div className="mainForm tac">
-      <h1>404 - Page not found </h1>
-      <h2>Redirecting to login page in: {timer}</h2>
+      <h1 className="unauthorised">404 - Page not found </h1>
+      <h3>
+        Redirecting to {whereTo} page in: {timer}
+      </h3>
     </div>
   );
 }

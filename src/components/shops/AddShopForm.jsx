@@ -38,6 +38,7 @@ const AddShopForm = ({ onAddShop }) => {
           id="shopName"
           name="shopName"
           type="text"
+          placeholder="Name of shop"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.shopName}
@@ -54,6 +55,7 @@ const AddShopForm = ({ onAddShop }) => {
         <textarea
           id="description"
           name="description"
+          placeholder="Shop description"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.description}
@@ -70,6 +72,7 @@ const AddShopForm = ({ onAddShop }) => {
         <input
           id="town"
           name="town"
+          placeholder="City where shop is located"
           type="text"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -87,6 +90,7 @@ const AddShopForm = ({ onAddShop }) => {
           id="startYear"
           name="startYear"
           type="number"
+          placeholder="Year when shop opened"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.startYear}
@@ -102,6 +106,7 @@ const AddShopForm = ({ onAddShop }) => {
         <input
           id="ImageUrl"
           name="ImageUrl"
+          placeholder="Image url"
           type="text"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}

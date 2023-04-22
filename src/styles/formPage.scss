@@ -19,6 +19,7 @@
     letter-spacing: 0.2rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid white;
+    text-transform: uppercase;
   }
  
 
@@ -40,5 +41,24 @@
   .linkAfterComment:hover {
     scale: 107%;
     color: rgba(255, 255, 255, 0.534);
+  }
+
+  .unauthorised{
+    color: red;
+  }
+  .yellow{
+    color: yellow;
+  }
+  .red{
+    color: red;
+  }
+  h2{font-size: 2.5rem;}
+  h3{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+  .warning{
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 }

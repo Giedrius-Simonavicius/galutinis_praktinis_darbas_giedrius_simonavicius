@@ -9,6 +9,7 @@ import AddShopPage from './pages/AddShopPage';
 import Footer from './components/layout/Footer';
 import NotFoundPage from './pages/NotFoundPage';
 import { useAuthCtx } from './store/AuthProvider';
+import NotLoggedIn from './pages/NotLoggedIn';
 
 function App() {
   const { isLoggedIn } = useAuthCtx();
@@ -32,16 +33,14 @@ function App() {
         <Route
           path="/shops"
           element={
-            (isLoggedIn && <ShopsPage />) ||
-            (!isLoggedIn && <h1>Must login</h1>)
+            (isLoggedIn && <ShopsPage />) || (!isLoggedIn && <NotLoggedIn />)
           }
         />
 
         <Route
           path="/shops/new"
           element={
-            (isLoggedIn && <AddShopPage />) ||
-            (!isLoggedIn && <h1>Must login</h1>)
+            (isLoggedIn && <AddShopPage />) || (!isLoggedIn && <NotLoggedIn />)
           }
         />
         <Route path="*" element={<NotFoundPage />} />
