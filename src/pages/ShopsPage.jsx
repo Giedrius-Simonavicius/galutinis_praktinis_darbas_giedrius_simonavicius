@@ -7,7 +7,6 @@ import '../styles/shopsPage.scss';
 function ShopsPage() {
   const [shopsArr, setShopsArr] = useState([]);
   const isNotEmpty = !!shopsArr.length;
-  console.log('isEmpty ===', isNotEmpty);
   useEffect(() => {
     async function getShops() {
       try {

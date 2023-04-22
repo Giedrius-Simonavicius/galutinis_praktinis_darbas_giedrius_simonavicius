@@ -17,31 +17,24 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={(!isLoggedIn && <LoginPage />) || <ShopsPage />}
-        />
+        <Route path="/" element={!isLoggedIn ? <LoginPage /> : <ShopsPage />} />
         <Route
           path="/login"
-          element={(!isLoggedIn && <LoginPage />) || <ShopsPage />}
+          element={!isLoggedIn ? <LoginPage /> : <ShopsPage />}
         />
         <Route
           path="/register"
-          element={(!isLoggedIn && <RegisterPage />) || <ShopsPage />}
+          element={!isLoggedIn ? <RegisterPage /> : <ShopsPage />}
         />
 
         <Route
           path="/shops"
-          element={
-            (isLoggedIn && <ShopsPage />) || (!isLoggedIn && <NotLoggedIn />)
-          }
+          element={isLoggedIn ? <ShopsPage /> : <NotLoggedIn />}
         />
 
         <Route
           path="/shops/new"
-          element={
-            (isLoggedIn && <AddShopPage />) || (!isLoggedIn && <NotLoggedIn />)
-          }
+          element={isLoggedIn ? <AddShopPage /> : <NotLoggedIn />}
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
