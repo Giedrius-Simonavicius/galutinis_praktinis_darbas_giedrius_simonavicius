@@ -2,7 +2,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 const AuthContext = createContext({
   user: {},
 
@@ -15,6 +15,7 @@ const localTokenKey = 'LOCAL_TOKEN';
 const localEmailKey = 'LOCAL_USER_EMAIL';
 
 function AuthProvider({ children }) {
+  console.log('children ===', children);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const tokenFromStorage = localStorage.getItem(localTokenKey);
@@ -60,6 +61,10 @@ function AuthProvider({ children }) {
     <AuthContext.Provider value={authCtx}>{children}</AuthContext.Provider>
   );
 }
+
+AuthProvider.propTypes = {
+  children: PropTypes.object,
+};
 
 export default AuthProvider;
 

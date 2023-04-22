@@ -1,6 +1,5 @@
 import React from 'react';
 import RegisterForm from '../components/auth/RegisterForm';
-import { useAuthCtx } from '../store/AuthProvider';
 import { auth } from '../firebase/firebase';
 import { createUserWithEmailAndPassword } from '@firebase/auth';
 import '../styles/formPage.scss';

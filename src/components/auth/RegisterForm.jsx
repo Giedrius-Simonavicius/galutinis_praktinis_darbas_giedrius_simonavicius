@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import './form.scss';
 import * as Yup from 'yup';
-
+import PropTypes from 'prop-types';
 function RegisterForm({ onUserRegistration }) {
   const formik = useFormik({
     initialValues: {
@@ -66,5 +66,7 @@ function RegisterForm({ onUserRegistration }) {
     </form>
   );
 }
-
+RegisterForm.propTypes = {
+  onUserRegistration: PropTypes.func,
+};
 export default RegisterForm;

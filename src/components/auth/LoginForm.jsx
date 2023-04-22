@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import PropTypes from 'prop-types';
 
 import './form.scss';
 function LoginForm({ onUserLogin }) {
@@ -64,4 +65,7 @@ function LoginForm({ onUserLogin }) {
   );
 }
 
+LoginForm.propTypes = {
+  onUserLogin: PropTypes.func,
+};
 export default LoginForm;

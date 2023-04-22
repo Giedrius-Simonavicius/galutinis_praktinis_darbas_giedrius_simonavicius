@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import '../auth/form.scss';
 import * as Yup from 'yup';
-
+import PropTypes from 'prop-types';
 const AddShopForm = ({ onAddShop }) => {
   const formik = useFormik({
     initialValues: {
@@ -121,6 +121,10 @@ const AddShopForm = ({ onAddShop }) => {
       <button type="submit">Add new shop</button>
     </form>
   );
+};
+
+AddShopForm.propTypes = {
+  onAddShop: PropTypes.func,
 };
 
 export default AddShopForm;

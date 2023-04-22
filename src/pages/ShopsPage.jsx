@@ -24,7 +24,6 @@ function ShopsPage() {
       }
     }
     getShops();
-    console.log('shopsArr ===', shopsArr);
   }, []);
   return (
     <div className="page">
