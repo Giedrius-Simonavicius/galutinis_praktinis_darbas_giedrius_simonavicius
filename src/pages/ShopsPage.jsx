@@ -28,12 +28,18 @@ function ShopsPage() {
     console.log('shopsArr ===', shopsArr);
   }, []);
   return (
-    <section className="allShops">
-      {(isNotEmpty &&
-        shopsArr.map((sObj) => <SingleShop key={sObj.uid} item={sObj} />)) || (
-        <h2>We apologise. There are no shops to display</h2>
+    <div className="page">
+      {isNotEmpty && (
+        <ul className="allShops">
+          {shopsArr.map((sObj) => (
+            <SingleShop key={sObj.uid} item={sObj} />
+          ))}
+        </ul>
       )}
-    </section>
+      {!isNotEmpty && (
+        <h2>We apologise. There are no shops to display at the moment</h2>
+      )}
+    </div>
   );
 }
 
