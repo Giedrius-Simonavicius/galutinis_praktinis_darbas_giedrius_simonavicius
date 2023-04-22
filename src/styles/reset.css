@@ -11,8 +11,10 @@ html {
 
 p,
 li,
-a {
+a,
+ul {
   font-size: 1.6rem;
+  list-style: none;
 }
 
 button {

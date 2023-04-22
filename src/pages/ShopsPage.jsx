@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../firebase/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import SingleShop from '../components/shops/SingleShop';
+import '../styles/shopsPage.scss';
 
 function ShopsPage() {
   const [shopsArr, setShopsArr] = useState([]);
