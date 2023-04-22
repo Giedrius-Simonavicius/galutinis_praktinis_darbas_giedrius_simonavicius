@@ -5,7 +5,8 @@ import SingleShop from '../components/shops/SingleShop';
 
 function ShopsPage() {
   const [shopsArr, setShopsArr] = useState([]);
-
+  const isEmpty = !!shopsArr.length;
+  console.log('isEmpty ===', isEmpty);
   useEffect(() => {
     async function getShops() {
       try {
@@ -26,11 +27,12 @@ function ShopsPage() {
     console.log('shopsArr ===', shopsArr);
   }, []);
   return (
-    <div>
-      {shopsArr.map((sObj) => (
-        <SingleShop key={sObj.uid} item={sObj} />
-      ))}
-    </div>
+    <ul>
+      {(isEmpty &&
+        shopsArr.map((sObj) => <SingleShop key={sObj.uid} item={sObj} />)) || (
+        <h2>We apologise. There are no shops to display</h2>
+      )}
+    </ul>
   );
 }
 
