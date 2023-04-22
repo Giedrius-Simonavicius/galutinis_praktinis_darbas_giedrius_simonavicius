@@ -18,7 +18,7 @@ function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const tokenFromStorage = localStorage.getItem(localTokenKey);
-  const [token, setToken] = useState(tokenFromStorage || '');
+  const [token, setToken] = useState(tokenFromStorage);
   const isLoggedIn = !!token;
 
   useEffect(() => {

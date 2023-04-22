@@ -12,8 +12,8 @@
     .container {
       margin-right: 0;
     }
-    .logoDiv{
-   display: flex;
+    .logoDiv {
+      display: flex;
       min-width: 29rem;
     }
     .logo {
@@ -21,8 +21,6 @@
       font-weight: 600;
       color: #555555ea;
       transition: 0.2s;
-     
-   
     }
     .logo:hover {
       color: #333;
@@ -49,7 +47,6 @@
       background-color: #858585;
       color: #ffffffce;
     }
-    
 
     .logoOur {
       font-size: 2rem;
@@ -69,4 +66,70 @@
       margin-right: 1.5rem;
     }
   }
+}
+
+@media screen and (max-width:800px) {
+  .mainHeader .head .navItem  {
+    font-size: 1rem;
+     padding: 2rem 0.7rem;
+  }
+  .mainHeader .head .logoOur {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .mainHeader .head  .ico1 {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-right: 0.2rem;
+  }
+  .mainHeader .head  .ico3 {
+    font-size: 2.2rem;
+    margin-right: 0.2rem;
+  }
+  .mainHeader .head  .ico2 {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+  }}
+  .mainHeader .head .logo {
+    font-size: 2rem;
+  
+  }
+
+
+@media screen and (max-width:600px) {
+  .mainHeader .head .navItem  {
+    font-size: 1rem;
+     padding: 1.5rem 0.5rem;
+  }
+  .mainHeader .head .container{
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  } 
+  .mainHeader .head .logo {
+    font-size: 1.5rem;
+  
+  }
+ 
+  .mainHeader .head .logoOur {
+    font-size: 1.5rem;
+   
+  }
+  .mainHeader .head  .ico1 {
+    font-size: 1.5rem;
+    
+  }
+  .mainHeader .head  .ico3 {
+    font-size: 1.7rem;
+  
+  }
+  .mainHeader .head  .ico2 {
+    font-size: 1.4rem;
+   
+  }
+
+  .mainHeader .head .navItem:hover {
+    text-shadow: none;
+
+  }
+  
 }

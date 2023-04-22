@@ -13,9 +13,6 @@ function NotFoundPage() {
 
   setTimeout(() => {
     setTimer(timer - 1);
-    console.log('whereTo ===', whereTo);
-    console.log('isLoggedIn ===', isLoggedIn);
-    console.log('user ===', user);
   }, 1000);
 
   return (

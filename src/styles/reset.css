@@ -23,6 +23,7 @@ button {
 
 body {
   margin: 0;
+  /* max-width: 144rem; */
 }
 
 img {
@@ -111,4 +112,13 @@ button:hover {
     #955324f0 100%
   );
   box-shadow: 5px 10px #595959;
+}
+@media screen and (max-width: 600px) {
+  body {
+    min-width: 43rem;
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
