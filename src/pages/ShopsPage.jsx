@@ -28,7 +28,7 @@ function ShopsPage() {
     console.log('shopsArr ===', shopsArr);
   }, []);
   return (
-    <ul>
+    <ul className="allShops">
       {(isEmpty &&
         shopsArr.map((sObj) => <SingleShop key={sObj.uid} item={sObj} />)) || (
         <h2>We apologise. There are no shops to display</h2>
