@@ -12,11 +12,17 @@
     .container {
       margin-right: 0;
     }
+    .logoDiv{
+   display: flex;
+      min-width: 29rem;
+    }
     .logo {
       font-size: 3rem;
       font-weight: 600;
       color: #555555ea;
       transition: 0.2s;
+     
+   
     }
     .logo:hover {
       color: #333;

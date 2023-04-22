@@ -23,9 +23,9 @@ function RegisterPage() {
       <div className="container innerForm">
         <h1>Registration</h1>
         <RegisterForm onUserRegistration={registerToFirebase} />
-        <div className="flex notRegistered">
+        <div className="flex comment">
           <p>Already registered? </p>
-          <NavLink className="clickToReg" to={'/login'}>
+          <NavLink className="linkAfterComment" to={'/login'}>
             sign in
           </NavLink>
         </div>

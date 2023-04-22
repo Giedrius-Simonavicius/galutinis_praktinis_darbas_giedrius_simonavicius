@@ -2,6 +2,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import React from 'react';
 import { db } from '../firebase/firebase';
 import AddShopForm from '../components/shops/AddShopForm';
+import { NavLink } from 'react-router-dom';
 
 function AddShopPage() {
   async function addShopIntoFire(newShopObj) {
@@ -14,9 +15,15 @@ function AddShopPage() {
 
   return (
     <div className="mainForm">
-      <h1>Add new shop</h1>
-
-      <AddShopForm onAddShop={addShopIntoFire} />
+      <div className="container innerForm">
+        <h1>Add new shop</h1>
+        <AddShopForm onAddShop={addShopIntoFire} />
+        <div className="flex comment">
+          <NavLink className="linkAfterComment" to={'/shops'}>
+            &#8592; Go back to shops
+          </NavLink>
+        </div>
+      </div>
     </div>
   );
 }

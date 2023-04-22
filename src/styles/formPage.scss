@@ -22,7 +22,7 @@
   }
  
 
-  .notRegistered {
+  .comment {
     align-items: end;
     justify-content: center;
     margin-top: 2rem;
@@ -30,14 +30,14 @@
     color: #333333c1;
   }
 
-  .clickToReg {
+  .linkAfterComment {
     margin-left: 1rem;
     font-size: 1.3rem;
     color: #582222;
     font-style: italic;
     transition: 0.2s;
   }
-  .clickToReg:hover {
+  .linkAfterComment:hover {
     scale: 107%;
     color: rgba(255, 255, 255, 0.534);
   }

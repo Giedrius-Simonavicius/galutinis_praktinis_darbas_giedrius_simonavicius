@@ -8,12 +8,15 @@ function Header() {
   return (
     <header className="mainHeader">
       <div className="head container flex between">
-        <Link className="logo" to={'/'}>
-          <span className="logoOur">O U R</span>
-          <i className="fa fa-building ico1" aria-hidden="true"></i>
-          <i className="fa fa-building ico3" aria-hidden="true"></i>
-          <i className="fa fa-building-o ico2" aria-hidden="true"></i>S H O P S
-        </Link>
+        <div className="logoDiv">
+          <Link className="logo" to={'/'}>
+            <span className="logoOur">O U R</span>
+            <i className="fa fa-building ico1" aria-hidden="true"></i>
+            <i className="fa fa-building ico3" aria-hidden="true"></i>
+            <i className="fa fa-building-o ico2" aria-hidden="true"></i>S H O P
+            S
+          </Link>
+        </div>
         <nav className="navigation flex">
           {!isLoggedIn && (
             <NavLink className={'navItem'} to={'/login'}>
