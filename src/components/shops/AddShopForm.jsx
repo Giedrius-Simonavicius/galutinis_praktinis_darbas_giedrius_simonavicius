@@ -9,7 +9,7 @@ const AddShopForm = ({ onAddShop }) => {
       ImageUrl: '',
       description: '',
       shopName: '',
-      startYear: 2000,
+      startYear: +'',
       town: '',
     },
 
@@ -90,7 +90,7 @@ const AddShopForm = ({ onAddShop }) => {
           id="startYear"
           name="startYear"
           type="number"
-          placeholder="Year when shop opened"
+          placeholder="1970 - 2022"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.startYear}

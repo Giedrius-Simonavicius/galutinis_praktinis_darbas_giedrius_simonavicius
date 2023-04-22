@@ -6,8 +6,8 @@ import '../styles/shopsPage.scss';
 
 function ShopsPage() {
   const [shopsArr, setShopsArr] = useState([]);
-  const isEmpty = !!shopsArr.length;
-  console.log('isEmpty ===', isEmpty);
+  const isNotEmpty = !!shopsArr.length;
+  console.log('isEmpty ===', isNotEmpty);
   useEffect(() => {
     async function getShops() {
       try {
@@ -28,12 +28,12 @@ function ShopsPage() {
     console.log('shopsArr ===', shopsArr);
   }, []);
   return (
-    <ul className="allShops">
-      {(isEmpty &&
+    <section className="allShops">
+      {(isNotEmpty &&
         shopsArr.map((sObj) => <SingleShop key={sObj.uid} item={sObj} />)) || (
         <h2>We apologise. There are no shops to display</h2>
       )}
-    </ul>
+    </section>
   );
 }
 
