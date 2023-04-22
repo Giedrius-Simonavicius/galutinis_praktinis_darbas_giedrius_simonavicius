@@ -15,7 +15,6 @@ const localTokenKey = 'LOCAL_TOKEN';
 const localEmailKey = 'LOCAL_USER_EMAIL';
 
 function AuthProvider({ children }) {
-  console.log('children ===', children);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const tokenFromStorage = localStorage.getItem(localTokenKey);

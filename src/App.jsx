@@ -33,7 +33,7 @@ function App() {
         />
 
         <Route
-          path="/shops/new"
+          path="/shops-new"
           element={isLoggedIn ? <AddShopPage /> : <NotLoggedIn />}
         />
         <Route path="*" element={<NotFoundPage />} />

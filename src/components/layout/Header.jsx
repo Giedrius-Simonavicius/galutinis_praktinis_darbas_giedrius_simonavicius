@@ -2,6 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import './header.scss';
 import { useAuthCtx } from '../../store/AuthProvider';
 import Logout from '../auth/Logout';
+
 function Header() {
   const { isLoggedIn } = useAuthCtx();
 
@@ -35,7 +36,7 @@ function Header() {
             </NavLink>
           )}
           {isLoggedIn && (
-            <NavLink className={'navItem'} to={'/shops/new'}>
+            <NavLink className={'navItem'} to={'/shops-new'}>
               Add shop
             </NavLink>
           )}
