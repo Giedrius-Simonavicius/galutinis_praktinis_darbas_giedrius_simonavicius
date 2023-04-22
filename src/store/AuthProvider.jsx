@@ -19,14 +19,12 @@ function AuthProvider({ children }) {
   const navigate = useNavigate();
   const tokenFromStorage = localStorage.getItem(localTokenKey);
   const [token, setToken] = useState(tokenFromStorage || '');
-  const [email, setEmail] = useState(localEmailKey || '');
   const isLoggedIn = !!token;
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
-        console.log('prisijungimas', user.accessToken);
         setUser(user);
         console.log('user ===', user);
       } else {
@@ -41,12 +39,10 @@ function AuthProvider({ children }) {
       localStorage.setItem(localTokenKey, user.accessToken);
       localStorage.setItem(localEmailKey, user.email);
       setToken(user.accessToken);
-      setEmail(user.email);
     } else {
       localStorage.removeItem(localTokenKey);
       setToken(null);
       localStorage.removeItem(localEmailKey);
-      setEmail(null);
     }
   }, [user]);
 
