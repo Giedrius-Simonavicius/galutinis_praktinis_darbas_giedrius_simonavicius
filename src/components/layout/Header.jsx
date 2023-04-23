@@ -17,7 +17,7 @@ function Header() {
               <i className="fa fa-building ico3" aria-hidden="true"></i>
               <i className="fa fa-building-o ico2" aria-hidden="true"></i>
             </div>
-            S H O P S
+            <span className="logoOur"> S H O P S</span>
           </Link>
         </div>
         <nav className="navigation flex">
