@@ -24,7 +24,7 @@ function ShopsPage() {
         });
         setShopsArr(tempShops);
         setIsLoading(false);
-        console.log('isLoading ===', isLoading);
+        // console.log('isLoading ===', isLoading);
       } catch (error) {
         console.warn('getShops', error.code, error.message);
         setIsLoading(false);

@@ -7,9 +7,11 @@ function Logout() {
   const { isLoggedIn, navTo } = useAuthCtx();
 
   function logoutUserFire() {
+    console.log('logout pasileido');
+    navTo('login');
     signOut(auth)
       .then(() => {
-        navTo('login');
+        isLoggedIn(false);
       })
       .catch((error) => {});
   }
