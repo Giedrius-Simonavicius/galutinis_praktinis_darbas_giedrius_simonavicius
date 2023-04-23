@@ -10,7 +10,6 @@ function RegisterPage() {
   const { navTo, setIsLoading, ui } = useAuthCtx();
 
   function registerToFirebase({ email, password }) {
-    ui.showLoading();
     setIsLoading(true);
 
     createUserWithEmailAndPassword(auth, email, password)
