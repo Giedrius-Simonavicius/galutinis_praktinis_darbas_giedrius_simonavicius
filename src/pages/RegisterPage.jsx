@@ -14,15 +14,11 @@ function RegisterPage() {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
         setIsLoading(false);
         ui.showSuccess('Registration succesfull');
         navTo('shops');
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
         ui.showError('Something went wrong');
         setIsLoading(false);
       });
