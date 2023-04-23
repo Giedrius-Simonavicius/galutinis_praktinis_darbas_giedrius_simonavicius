@@ -36,4 +36,14 @@
     margin-bottom: 4rem;
     font-weight: 600;
   }
+
+  .inactive{
+    background: linear-gradient(
+      60deg,
+      #5c5551d4 0%,
+      #972a49bc 50%,
+      #655f63c9 75%,
+      #791551c9 100%
+    );
+  }
 }

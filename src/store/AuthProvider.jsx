@@ -9,26 +9,36 @@ const AuthContext = createContext({
   isLoading: false,
   navTo() {},
   isLoggedIn: false,
+  ui: {},
+  feedback: {},
 });
 AuthContext.displayName = 'Authtentification';
-
-const localTokenKey = 'LOCAL_TOKEN';
-const localEmailKey = 'LOCAL_USER_EMAIL';
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const tokenFromStorage = localStorage.getItem(localTokenKey);
-  const [token, setToken] = useState(tokenFromStorage);
-  const isLoggedIn = !!token;
+  const isLoggedIn = !!user;
   const [isLoading, setIsLoading] = useState(false);
+  const [feedback, setFeedback] = useState({
+    show: false,
+    msg: '',
+    type: '',
+  });
+  let inactive = '';
+
+  if (isLoading) {
+    inactive = 'inactive';
+  }
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // const uid = user.uid;
         setUser(user);
-        // console.log('user ===', user);
+        setFeedback({
+          show: true,
+          msg: 'User logged in',
+          type: 'success',
+        });
       } else {
         console.log('Logout User');
         setUser(null);
@@ -36,21 +46,53 @@ function AuthProvider({ children }) {
     });
   }, []);
 
-  useEffect(() => {
-    if (user) {
-      localStorage.setItem(localTokenKey, user.accessToken);
-      localStorage.setItem(localEmailKey, user.email);
-      setToken(user.accessToken);
-    } else {
-      localStorage.removeItem(localTokenKey);
-      setToken(null);
-      localStorage.removeItem(localEmailKey);
-    }
-  }, [user]);
-
   function navTo(whereTo) {
     navigate(`/${whereTo}`);
   }
+
+  const { show, msg } = feedback;
+  useEffect(() => {
+    if (show === true && msg !== 'Loading') {
+      setTimeout(() => {
+        setFeedback({
+          show: false,
+          msg: '',
+          type: '',
+        });
+      }, 3000);
+    }
+  }, [show, msg]);
+
+  const ui = {
+    showSuccess(msg = '') {
+      setFeedback({
+        show: true,
+        msg: msg || 'Success',
+        type: 'success',
+      });
+    },
+    showError(msg = '') {
+      setFeedback({
+        show: true,
+        msg: msg || 'Error',
+        type: 'error',
+      });
+    },
+    showLoading() {
+      setFeedback({
+        show: true,
+        msg: 'Loading',
+        type: 'loading',
+      });
+    },
+    closeMessage() {
+      setFeedback({
+        show: false,
+        msg: '',
+        type: '',
+      });
+    },
+  };
 
   const authCtx = {
     user,
@@ -58,6 +100,9 @@ function AuthProvider({ children }) {
     setIsLoading,
     navTo,
     isLoggedIn,
+    ui,
+    feedback,
+    inactive,
   };
   return (
     <AuthContext.Provider value={authCtx}>{children}</AuthContext.Provider>

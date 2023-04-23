@@ -6,7 +6,8 @@ import { useAuthCtx } from '../store/AuthProvider';
 import { NavLink } from 'react-router-dom';
 
 function LoginPage() {
-  const { navTo, isLoggedIn, setIsLoading, ui } = useAuthCtx();
+  const { navTo, isLoggedIn, setIsLoading, ui, isLoading } = useAuthCtx();
+  setIsLoading(true);
 
   function loginToFirebase({ email, password }) {
     ui.showLoading();
@@ -27,6 +28,7 @@ function LoginPage() {
         setIsLoading(false);
       });
   }
+  setIsLoading(false);
   return (
     <div className="mainForm">
       <div className="innerForm container">

@@ -6,7 +6,10 @@ import PropTypes from 'prop-types';
 import { useAuthCtx } from '../../store/AuthProvider';
 
 const AddShopForm = ({ onAddShop }) => {
-  const { isLoading } = useAuthCtx();
+  const { isLoading, inactive } = useAuthCtx();
+
+  const posting = 'posting new shop . . .';
+  const addNew = 'Add new shop ';
   const formik = useFormik({
     initialValues: {
       ImageUrl: '',
@@ -30,6 +33,7 @@ const AddShopForm = ({ onAddShop }) => {
     onSubmit: (values) => {
       console.log(values);
       onAddShop(values);
+      console.log('add pasileido');
     },
   });
 
@@ -121,8 +125,9 @@ const AddShopForm = ({ onAddShop }) => {
           <div className="insvisible">insvisible</div>
         )}
       </div>
-      <button disabled={isLoading} type="submit">
-        Add new shop
+      <button className={inactive} disabled={isLoading} type="submit">
+        {isLoading && posting}
+        {!isLoading && addNew}
       </button>
     </form>
   );

@@ -9,10 +9,11 @@ function ShopsPage() {
   const [shopsArr, setShopsArr] = useState([]);
   const { isLoading, setIsLoading } = useAuthCtx();
   const isNotEmpty = !!shopsArr.length;
+
+  console.log('isLoading ===', isLoading);
   useEffect(() => {
-    setIsLoading(true);
-    console.log('isLoading ===', isLoading);
     async function getShops() {
+      setIsLoading(true);
       try {
         const querySnapshot = await getDocs(collection(db, 'shops'));
         const tempShops = [];
@@ -23,25 +24,33 @@ function ShopsPage() {
           });
         });
         setShopsArr(tempShops);
+        console.log('isLoading ===', isLoading);
+
         setIsLoading(false);
-        // console.log('isLoading ===', isLoading);
+        console.log('isLoading ===', isLoading);
       } catch (error) {
         console.warn('getShops', error.code, error.message);
-        setIsLoading(false);
       }
     }
+    setIsLoading(false);
+
     getShops();
   }, []);
+
   return (
     <div className="page">
-      {isNotEmpty && (
-        <ul className="allShops">
-          {shopsArr.map((sObj) => (
-            <SingleShop key={sObj.uid} item={sObj} />
-          ))}
-        </ul>
+      {isLoading ? (
+        <h2>loading...</h2>
+      ) : (
+        isNotEmpty && (
+          <ul className="allShops">
+            {shopsArr.map((sObj) => (
+              <SingleShop key={sObj.uid} item={sObj} />
+            ))}
+          </ul>
+        )
       )}
-      {!isNotEmpty && (
+      {!isNotEmpty && !isLoading && (
         <h2>We apologise. There are no shops to display at the moment</h2>
       )}
     </div>

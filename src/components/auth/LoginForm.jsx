@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import './form.scss';
 import { useAuthCtx } from '../../store/AuthProvider';
 function LoginForm({ onUserLogin }) {
-  const { isLoading } = useAuthCtx();
+  const { isLoading, inactive } = useAuthCtx();
   const formik = useFormik({
     initialValues: {
       email: 'test@test.com',
@@ -62,7 +62,7 @@ function LoginForm({ onUserLogin }) {
           <div className="insvisible"></div>
         )}
       </div>
-      <button disabled={isLoading} type="submit">
+      <button disabled={isLoading} className={inactive} type="submit">
         Login
       </button>
     </form>

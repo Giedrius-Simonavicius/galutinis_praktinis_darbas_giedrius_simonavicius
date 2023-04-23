@@ -6,24 +6,30 @@ import { NavLink } from 'react-router-dom';
 import { useAuthCtx } from '../store/AuthProvider';
 
 function AddShopPage() {
-  const { navTo, setIsLoading } = useAuthCtx();
+  const { navTo, setIsLoading, ui, isLoading } = useAuthCtx();
 
   async function addShopIntoFire(newShopObj) {
+    ui.showLoading();
     setIsLoading(true);
     try {
       const docRef = await addDoc(collection(db, 'shops'), newShopObj);
       setIsLoading(false);
+      ui.showSuccess('Shop added');
       setTimeout(() => {
         navTo('shops');
       }, 3000);
     } catch (error) {
-      console.error('Error while adding document: ', error);
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log('errorMessage ===', errorMessage);
+      ui.showError('Something went wrong');
       setIsLoading(false);
     }
   }
 
   return (
     <div className="mainForm">
+      {isLoading && <h2>loading...</h2>}
       <div className="container innerForm">
         <h1>Add new shop</h1>
         <AddShopForm onAddShop={addShopIntoFire} />

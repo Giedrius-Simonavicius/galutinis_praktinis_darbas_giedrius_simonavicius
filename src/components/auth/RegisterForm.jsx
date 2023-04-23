@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import { useAuthCtx } from '../../store/AuthProvider';
 function RegisterForm({ onUserRegistration }) {
-  const { isLoading } = useAuthCtx();
+  const { isLoading, inactive } = useAuthCtx();
 
   const formik = useFormik({
     initialValues: {
@@ -65,7 +65,7 @@ function RegisterForm({ onUserRegistration }) {
         )}
       </div>
 
-      <button disabled={isLoading} type="submit">
+      <button disabled={isLoading} className={inactive} type="submit">
         Register
       </button>
     </form>
