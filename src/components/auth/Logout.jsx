@@ -11,10 +11,11 @@ function Logout() {
     signOut(auth)
       .then(() => {
         isLoggedIn(false);
-        ui.showSuccess('Logged out');
         navTo('login');
       })
+
       .catch((error) => {});
+    ui.showSuccess('Logged out');
   }
 
   return <button onClick={logoutUserFire}>Logout</button>;
