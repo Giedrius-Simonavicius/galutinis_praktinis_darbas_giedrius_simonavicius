@@ -49,13 +49,26 @@ function LoginPage() {
     <div className="mainForm">
       <div className="innerForm container">
         <h1>Sign in</h1>
-        <LoginForm onUserLogin={loginToFirebase} />
-        <button onClick={loginWithGoogle}>Log in with Google mail</button>
+        <LoginForm
+          onUserLogin={loginToFirebase}
+          loginWithGoogle={loginWithGoogle}
+        />
+
         <div className="flex comment">
           <p>Not a member yet? </p>
           <NavLink className="linkAfterComment" to={'/register'}>
             click here to sign up
           </NavLink>
+        </div>
+        <div className="tac">
+          <p className="or">Or</p>
+          <button className="loginGoogle" onClick={loginWithGoogle}>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/30px-Google_%22G%22_Logo.svg.png"
+              alt="google"
+            />
+            <span className="googl">Log in with Google</span>
+          </button>
         </div>
       </div>
     </div>

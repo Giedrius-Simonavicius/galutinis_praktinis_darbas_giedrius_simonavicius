@@ -20,23 +20,24 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={!isLoggedIn ? <LoginPage /> : <Navigate to={'/shops'} />}
+          element={isLoggedIn ? <Navigate to={'/shops'} /> : <LoginPage />}
         />
         <Route
           path="/login"
-          element={!isLoggedIn ? <LoginPage /> : <Navigate to={'/shops'} />}
+          element={isLoggedIn ? <Navigate to={'/shops'} /> : <LoginPage />}
         />
         <Route
           path="/register"
-          element={!isLoggedIn ? <RegisterPage /> : <Navigate to={'/shops'} />}
+          element={isLoggedIn ? <Navigate to={'/shops'} /> : <RegisterPage />}
         />
         <Route
           path="/shops"
           element={isLoggedIn ? <ShopsPage /> : <Navigate to={'/login'} />}
         />
+
         <Route
           path="/shops-new"
-          element={isLoggedIn ? <AddShopPage /> : <Navigate to={'/login'} />}
+          element={!isLoggedIn ? <Navigate to={'/login'} /> : <AddShopPage />}
         />
 
         <Route path="*" element={<NotFoundPage />} />

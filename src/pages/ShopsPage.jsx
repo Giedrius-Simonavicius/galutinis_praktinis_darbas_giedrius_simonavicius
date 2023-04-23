@@ -7,7 +7,7 @@ import { useAuthCtx } from '../store/AuthProvider';
 
 function ShopsPage() {
   const [shopsArr, setShopsArr] = useState([]);
-  const { isLoading, setIsLoading } = useAuthCtx();
+  const { isLoading, setIsLoading, ui } = useAuthCtx();
   const isNotEmpty = !!shopsArr.length;
 
   console.log('isLoading ===', isLoading);
@@ -24,12 +24,10 @@ function ShopsPage() {
           });
         });
         setShopsArr(tempShops);
-        console.log('isLoading ===', isLoading);
-
         setIsLoading(false);
-        console.log('isLoading ===', isLoading);
       } catch (error) {
         console.warn('getShops', error.code, error.message);
+        ui.showError('Something went wrong');
       }
     }
     setIsLoading(false);

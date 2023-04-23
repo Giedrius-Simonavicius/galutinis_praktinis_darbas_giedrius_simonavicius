@@ -4,19 +4,20 @@ import { useAuthCtx } from '../../store/AuthProvider';
 import { auth } from '../../firebase/firebase';
 
 function Logout() {
-  const { isLoggedIn, navTo } = useAuthCtx();
+  const { isLoggedIn, navTo, ui } = useAuthCtx();
 
   function logoutUserFire() {
     console.log('logout pasileido');
-    navTo('login');
     signOut(auth)
       .then(() => {
         isLoggedIn(false);
+        ui.showSuccess('Logged out');
+        navTo('login');
       })
       .catch((error) => {});
   }
 
-  return !isLoggedIn ? null : <button onClick={logoutUserFire}>Logout</button>;
+  return <button onClick={logoutUserFire}>Logout</button>;
 }
 
 export default Logout;

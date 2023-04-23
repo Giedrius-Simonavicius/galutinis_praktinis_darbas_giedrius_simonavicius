@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import './form.scss';
 import { useAuthCtx } from '../../store/AuthProvider';
-function LoginForm({ onUserLogin }) {
+function LoginForm({ onUserLogin, loginWithGoogle }) {
   const { isLoading, inactive } = useAuthCtx();
   const formik = useFormik({
     initialValues: {

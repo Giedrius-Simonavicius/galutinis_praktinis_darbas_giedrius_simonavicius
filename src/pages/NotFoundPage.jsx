@@ -2,7 +2,7 @@ import '../styles/formPage.scss';
 import { useAuthCtx } from '../store/AuthProvider';
 import { useEffect, useState } from 'react';
 function NotFoundPage() {
-  const { navTo, isLoggedIn, user } = useAuthCtx();
+  const { navTo, isLoggedIn } = useAuthCtx();
   const [timer, setTimer] = useState(5);
   const whereTo = isLoggedIn ? 'shops' : 'login';
 
