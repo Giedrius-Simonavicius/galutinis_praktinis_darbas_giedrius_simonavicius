@@ -4,7 +4,7 @@ import { useAuthCtx } from '../../store/AuthProvider';
 import Logout from '../auth/Logout';
 
 function Header() {
-  const { isLoggedIn } = useAuthCtx();
+  const { isLoggedIn, user } = useAuthCtx();
 
   return (
     <header className="mainHeader">
@@ -43,11 +43,15 @@ function Header() {
             </NavLink>
           )}
         </nav>
-        {isLoggedIn && (
-          <>
-            <Logout />
-          </>
-        )}
+
+        <div className="user">
+          {isLoggedIn && <p className="userTxt">{user.email}</p>}
+          {isLoggedIn && (
+            <>
+              <Logout />
+            </>
+          )}
+        </div>
       </div>
     </header>
   );

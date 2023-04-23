@@ -1,12 +1,16 @@
 import React from 'react';
 import LoginForm from '../components/auth/LoginForm';
-import { signInWithEmailAndPassword } from '@firebase/auth';
-import { auth } from '../firebase/firebase';
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from '@firebase/auth';
+import { auth, googleProvider } from '../firebase/firebase';
 import { useAuthCtx } from '../store/AuthProvider';
 import { NavLink } from 'react-router-dom';
 
 function LoginPage() {
-  const { navTo, isLoggedIn, setIsLoading, ui, isLoading } = useAuthCtx();
+  const { navTo, setIsLoading, ui } = useAuthCtx();
   setIsLoading(true);
 
   function loginToFirebase({ email, password }) {
@@ -28,12 +32,25 @@ function LoginPage() {
         setIsLoading(false);
       });
   }
+  function loginWithGoogle() {
+    //
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        navTo('shops');
+        ui.showSuccess('Logged in');
+      })
+      .catch((error) => {
+        ui.showError('Failed to login');
+        setIsLoading(false);
+      });
+  }
   setIsLoading(false);
   return (
     <div className="mainForm">
       <div className="innerForm container">
         <h1>Sign in</h1>
         <LoginForm onUserLogin={loginToFirebase} />
+        <button onClick={loginWithGoogle}>Log in with Google mail</button>
         <div className="flex comment">
           <p>Not a member yet? </p>
           <NavLink className="linkAfterComment" to={'/register'}>

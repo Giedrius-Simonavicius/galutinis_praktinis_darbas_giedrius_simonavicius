@@ -8,11 +8,18 @@
     #68827d6b 75%,
     #a77d7db6 100%
   );
+  .userTxt{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+.user{
+  text-align: end;
+}
   .head {
     .container {
       margin-right: 0;
     }
-
     .logo {
       font-size: 3rem;
       font-weight: 600;
