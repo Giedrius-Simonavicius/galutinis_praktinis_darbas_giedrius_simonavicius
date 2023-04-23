@@ -4,7 +4,9 @@ import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 
 import './form.scss';
+import { useAuthCtx } from '../../store/AuthProvider';
 function LoginForm({ onUserLogin }) {
+  const { isLoading } = useAuthCtx();
   const formik = useFormik({
     initialValues: {
       email: 'test@test.com',
@@ -60,7 +62,9 @@ function LoginForm({ onUserLogin }) {
           <div className="insvisible"></div>
         )}
       </div>
-      <button type="submit">Login</button>
+      <button disabled={isLoading} type="submit">
+        Login
+      </button>
     </form>
   );
 }

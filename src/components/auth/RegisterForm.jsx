@@ -3,7 +3,10 @@ import { useFormik } from 'formik';
 import './form.scss';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
+import { useAuthCtx } from '../../store/AuthProvider';
 function RegisterForm({ onUserRegistration }) {
+  const { isLoading } = useAuthCtx();
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -62,7 +65,9 @@ function RegisterForm({ onUserRegistration }) {
         )}
       </div>
 
-      <button type="submit">Register</button>
+      <button disabled={isLoading} type="submit">
+        Register
+      </button>
     </form>
   );
 }

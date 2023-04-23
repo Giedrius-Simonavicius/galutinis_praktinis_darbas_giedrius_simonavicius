@@ -3,7 +3,10 @@ import { useFormik } from 'formik';
 import '../auth/form.scss';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
+import { useAuthCtx } from '../../store/AuthProvider';
+
 const AddShopForm = ({ onAddShop }) => {
+  const { isLoading } = useAuthCtx();
   const formik = useFormik({
     initialValues: {
       ImageUrl: '',
@@ -118,7 +121,9 @@ const AddShopForm = ({ onAddShop }) => {
           <div className="insvisible">insvisible</div>
         )}
       </div>
-      <button type="submit">Add new shop</button>
+      <button disabled={isLoading} type="submit">
+        Add new shop
+      </button>
     </form>
   );
 };

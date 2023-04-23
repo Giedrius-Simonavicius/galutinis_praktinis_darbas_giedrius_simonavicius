@@ -3,13 +3,14 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 const AuthContext = createContext({
   user: {},
-
+  isLoading: false,
   navTo() {},
   isLoggedIn: false,
 });
-AuthContext.displayName = 'AuthContext';
+AuthContext.displayName = 'Authtentification';
 
 const localTokenKey = 'LOCAL_TOKEN';
 const localEmailKey = 'LOCAL_USER_EMAIL';
@@ -20,6 +21,7 @@ function AuthProvider({ children }) {
   const tokenFromStorage = localStorage.getItem(localTokenKey);
   const [token, setToken] = useState(tokenFromStorage);
   const isLoggedIn = !!token;
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -52,7 +54,8 @@ function AuthProvider({ children }) {
 
   const authCtx = {
     user,
-
+    isLoading,
+    setIsLoading,
     navTo,
     isLoggedIn,
   };

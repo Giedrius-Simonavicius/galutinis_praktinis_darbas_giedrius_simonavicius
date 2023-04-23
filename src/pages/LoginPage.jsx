@@ -6,13 +6,16 @@ import { useAuthCtx } from '../store/AuthProvider';
 import { NavLink } from 'react-router-dom';
 
 function LoginPage() {
-  const { navTo, isLoggedIn } = useAuthCtx();
+  const { navTo, isLoggedIn, setIsLoading } = useAuthCtx();
 
   function loginToFirebase({ email, password }) {
+    setIsLoading(true);
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log('user ===', user);
+        setIsLoading(false);
         navTo('shops');
         console.log('isLoggedIn ===', isLoggedIn);
       })
@@ -20,6 +23,7 @@ function LoginPage() {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log('errorMessage ===', errorMessage);
+        setIsLoading(false);
       });
   }
   return (
