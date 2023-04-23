@@ -6,23 +6,26 @@ import { useAuthCtx } from '../store/AuthProvider';
 import { NavLink } from 'react-router-dom';
 
 function LoginPage() {
-  const { navTo, isLoggedIn, setIsLoading } = useAuthCtx();
+  const { navTo, isLoggedIn, setIsLoading, ui } = useAuthCtx();
 
   function loginToFirebase({ email, password }) {
+    ui.showLoading();
     setIsLoading(true);
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log('user ===', user);
         setIsLoading(false);
         navTo('shops');
-        console.log('isLoggedIn ===', isLoggedIn);
+        ui.showSuccess('Logged in');
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log('errorMessage ===', errorMessage);
+        if (errorMessage !== '') {
+          ui.showError('Email or password incorrect');
+        }
         setIsLoading(false);
       });
   }
