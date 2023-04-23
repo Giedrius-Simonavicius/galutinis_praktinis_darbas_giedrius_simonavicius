@@ -9,7 +9,7 @@ import AddShopPage from './pages/AddShopPage';
 import Footer from './components/layout/Footer';
 import NotFoundPage from './pages/NotFoundPage';
 import { useAuthCtx } from './store/AuthProvider';
-import Feedback from './components/ui/Feedback';
+import Feedback from './components/ui/feedback/Feedback';
 
 function App() {
   const { isLoggedIn } = useAuthCtx();

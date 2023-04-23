@@ -1,6 +1,6 @@
 import React from 'react';
 import './feedback.scss';
-import { useAuthCtx } from '../../store/AuthProvider';
+import { useAuthCtx } from '../../../store/AuthProvider';
 
 function Feedback() {
   const { feedback, ui } = useAuthCtx();
