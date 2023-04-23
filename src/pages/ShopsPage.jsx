@@ -4,6 +4,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import SingleShop from '../components/shops/SingleShop';
 import '../styles/shopsPage.scss';
 import { useAuthCtx } from '../store/AuthProvider';
+import Loader from '../components/ui/loader/Loader';
 
 function ShopsPage() {
   const [shopsArr, setShopsArr] = useState([]);
@@ -36,7 +37,7 @@ function ShopsPage() {
   return (
     <div className="page">
       {isLoading ? (
-        <h2>loading...</h2>
+        <Loader />
       ) : (
         isNotEmpty && (
           <ul className="allShops">
