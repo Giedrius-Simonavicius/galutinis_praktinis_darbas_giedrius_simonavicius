@@ -7,19 +7,24 @@ import { NavLink } from 'react-router-dom';
 import { useAuthCtx } from '../store/AuthProvider';
 
 function RegisterPage() {
-  const { navTo, setIsLoading } = useAuthCtx();
+  const { navTo, setIsLoading, ui } = useAuthCtx();
+
   function registerToFirebase({ email, password }) {
+    ui.showLoading();
     setIsLoading(true);
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         setIsLoading(false);
+        ui.showSuccess('Registration succesfull');
         navTo('shops');
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log('errorMessage ===', errorMessage);
+        ui.showError('Something went wrong');
         setIsLoading(false);
       });
   }

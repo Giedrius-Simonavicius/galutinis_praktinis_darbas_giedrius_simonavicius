@@ -23,9 +23,7 @@ function LoginPage() {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log('errorMessage ===', errorMessage);
-        if (errorMessage !== '') {
-          ui.showError('Email or password incorrect');
-        }
+        ui.showError('Email or password incorrect');
         setIsLoading(false);
       });
   }
