@@ -10,7 +10,6 @@ function ShopsPage() {
   const { isLoading, setIsLoading, ui } = useAuthCtx();
   const isNotEmpty = !!shopsArr.length;
 
-  console.log('isLoading ===', isLoading);
   useEffect(() => {
     async function getShops() {
       setIsLoading(true);
@@ -26,7 +25,6 @@ function ShopsPage() {
         setShopsArr(tempShops);
         setIsLoading(false);
       } catch (error) {
-        console.warn('getShops', error.code, error.message);
         ui.showError('Something went wrong');
       }
     }

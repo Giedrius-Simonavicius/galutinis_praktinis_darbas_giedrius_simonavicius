@@ -31,9 +31,7 @@ const AddShopForm = ({ onAddShop }) => {
     }),
 
     onSubmit: (values) => {
-      console.log(values);
       onAddShop(values);
-      console.log('add pasileido');
     },
   });
 

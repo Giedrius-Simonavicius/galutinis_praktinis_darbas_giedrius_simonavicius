@@ -21,7 +21,6 @@ function LoginForm({ onUserLogin, loginWithGoogle }) {
     }),
 
     onSubmit: (values) => {
-      console.log('Form values:', values);
       onUserLogin(values);
     },
   });

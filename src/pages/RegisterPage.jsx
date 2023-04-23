@@ -23,7 +23,7 @@ function RegisterPage() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('errorMessage ===', errorMessage);
+
         ui.showError('Something went wrong');
         setIsLoading(false);
       });

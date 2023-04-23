@@ -40,7 +40,6 @@ function AuthProvider({ children }) {
           type: 'success',
         });
       } else {
-        console.log('Logout User');
         setUser(null);
       }
     });

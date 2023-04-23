@@ -23,7 +23,6 @@ function RegisterForm({ onUserRegistration }) {
     }),
 
     onSubmit: (values) => {
-      console.log('Form values:', values);
       onUserRegistration(values);
     },
   });
