@@ -46,7 +46,7 @@ function RegisterForm({ onUserRegistration }) {
           <div className="insvisible">insvisible</div>
         )}
       </div>
-      <div>
+      <div className="passDiv">
         <label htmlFor="password">Password</label>
         <input
           id="password"

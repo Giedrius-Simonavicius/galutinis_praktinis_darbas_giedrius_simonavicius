@@ -30,7 +30,7 @@ function AuthProvider({ children }) {
     inactive = 'inactive';
   }
   const location = useLocation();
-  console.log('location ===', location);
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       switch (true) {
