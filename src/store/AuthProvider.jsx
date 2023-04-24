@@ -1,7 +1,7 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase/firebase';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const AuthContext = createContext({
@@ -29,18 +29,47 @@ function AuthProvider({ children }) {
   if (isLoading) {
     inactive = 'inactive';
   }
-
+  const location = useLocation();
+  console.log('location ===', location);
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        setFeedback({
-          show: true,
-          msg: 'User logged in',
-          type: 'success',
-        });
-      } else {
-        setUser(null);
+      switch (true) {
+        case !!user:
+          setUser(user);
+          setFeedback({
+            show: true,
+            msg: 'User already logged in',
+            type: 'info',
+          });
+          break;
+        case !user && location.pathname === '/shops':
+          setUser(user);
+          setFeedback({
+            show: true,
+            msg: 'Must login to access "shops" page',
+            type: 'error',
+          });
+          break;
+        case !user && location.pathname === '/shops-new':
+          setUser(user);
+          setFeedback({
+            show: true,
+            msg: 'Must login to access "shops-new" page',
+            type: 'error',
+          });
+          break;
+        case !user && location.pathname === '/login':
+        case !user && location.pathname === '/register':
+          setUser(user);
+          setFeedback({
+            show: false,
+            msg: '',
+            type: '',
+          });
+          break;
+        default:
+          setUser(null);
+          break;
       }
     });
   }, []);
@@ -51,7 +80,7 @@ function AuthProvider({ children }) {
 
   const { show, msg } = feedback;
   useEffect(() => {
-    if (show === true && msg !== 'Loading') {
+    if (show === true) {
       setTimeout(() => {
         setFeedback({
           show: false,
