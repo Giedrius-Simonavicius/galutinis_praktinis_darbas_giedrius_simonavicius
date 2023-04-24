@@ -38,7 +38,7 @@ function AuthProvider({ children }) {
           setUser(user);
           setFeedback({
             show: true,
-            msg: 'User already logged in',
+            msg: 'User is already logged in',
             type: 'info',
           });
           break;
@@ -46,7 +46,7 @@ function AuthProvider({ children }) {
           setUser(user);
           setFeedback({
             show: true,
-            msg: 'Must login to access "shops" page',
+            msg: 'Please login to access "shops" page',
             type: 'error',
           });
           break;
