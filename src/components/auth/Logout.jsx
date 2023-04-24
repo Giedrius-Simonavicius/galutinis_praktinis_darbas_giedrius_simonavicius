@@ -15,7 +15,7 @@ function Logout() {
       })
 
       .catch((error) => {});
-    ui.showError('Failed to log out');
+    ui.showSuccess('Logged out');
   }
 
   return <button onClick={logoutUserFire}>Logout</button>;
