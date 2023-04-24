@@ -29,8 +29,8 @@ function AuthProvider({ children }) {
   if (isLoading) {
     inactive = 'inactive';
   }
-  const location = useLocation();
 
+  const location = useLocation();
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       switch (true) {
@@ -72,6 +72,7 @@ function AuthProvider({ children }) {
           break;
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function navTo(whereTo) {
