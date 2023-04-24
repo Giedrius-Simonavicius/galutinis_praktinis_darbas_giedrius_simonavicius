@@ -14,7 +14,7 @@ import Logout from './components/auth/Logout';
 
 function App() {
   const { isLoggedIn } = useAuthCtx();
-  Logout();
+  // Logout();
   return (
     <div>
       <Header />
