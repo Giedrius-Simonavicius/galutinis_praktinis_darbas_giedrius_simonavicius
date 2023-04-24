@@ -9,8 +9,8 @@ function LoginForm({ onUserLogin }) {
   const { isLoading, inactive } = useAuthCtx();
   const formik = useFormik({
     initialValues: {
-      email: 'test@test.com',
-      password: '123456',
+      email: '',
+      password: '',
     },
 
     validationSchema: Yup.object({
