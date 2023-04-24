@@ -28,7 +28,6 @@ function LoginPage() {
       });
   }
   function loginWithGoogle() {
-    //
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         navTo('shops');

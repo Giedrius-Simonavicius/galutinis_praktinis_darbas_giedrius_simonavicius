@@ -17,7 +17,9 @@ function LoginForm({ onUserLogin }) {
       email: Yup.string()
         .email('Incorrect email format')
         .required('Email is required'),
-      password: Yup.string().required('Password is required'),
+      password: Yup.string()
+        .required('Password is required')
+        .min(6, 'Minimum 6 symbols required'),
     }),
 
     onSubmit: (values) => {

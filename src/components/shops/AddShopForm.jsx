@@ -15,17 +15,19 @@ const AddShopForm = ({ onAddShop }) => {
       ImageUrl: '',
       description: '',
       shopName: '',
-      startYear: +'',
+      startYear: '',
       town: '',
     },
 
     validationSchema: Yup.object({
-      ImageUrl: Yup.string().min(5).required('Image url is required'),
+      ImageUrl: Yup.string()
+        .min(5, 'Image url must be at least 5 characters')
+        .required('Image url is required'),
       description: Yup.string().min(6).required('Description is required'),
       shopName: Yup.string().min(4).required('Shop name is required'),
       startYear: Yup.number()
-        .min(1970)
-        .max(2022)
+        .min(1970, 'Must be more or equal to 1970')
+        .max(2022, 'Must be less than or equal to 2022')
         .required('Start year is required'),
       town: Yup.string().min(4).required('Town is required'),
     }),
