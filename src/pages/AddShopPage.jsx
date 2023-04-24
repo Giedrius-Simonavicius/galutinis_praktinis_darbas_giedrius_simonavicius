@@ -12,7 +12,7 @@ function AddShopPage() {
   async function addShopIntoFire(newShopObj) {
     setIsLoading(true);
     try {
-      const docRef = await addDoc(collection(db, 'shops'), newShopObj);
+      await addDoc(collection(db, 'shops'), newShopObj);
       setIsLoading(false);
       ui.showSuccess('Shop added');
       setTimeout(() => {
