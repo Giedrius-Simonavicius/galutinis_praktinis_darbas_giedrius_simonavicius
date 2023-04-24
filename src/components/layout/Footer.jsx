@@ -5,10 +5,10 @@ function Footer() {
     dateStyle: 'short',
   });
   return (
-    <div className="tac foot">
+    <footer className="tac foot">
       <p>&copy; Copyright. All rights reserved </p>
       <p>{formatedDate}</p>
-    </div>
+    </footer>
   );
 }
 
