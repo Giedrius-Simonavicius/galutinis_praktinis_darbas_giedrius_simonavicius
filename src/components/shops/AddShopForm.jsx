@@ -34,6 +34,7 @@ const AddShopForm = ({ onAddShop }) => {
 
     onSubmit: (values) => {
       onAddShop(values);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     },
   });
 
