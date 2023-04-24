@@ -32,6 +32,7 @@ function ShopsPage() {
     setIsLoading(false);
 
     getShops();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

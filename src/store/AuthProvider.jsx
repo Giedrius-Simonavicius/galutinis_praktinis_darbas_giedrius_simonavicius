@@ -107,13 +107,6 @@ function AuthProvider({ children }) {
         type: 'error',
       });
     },
-    showLoading() {
-      setFeedback({
-        show: true,
-        msg: 'Loading',
-        type: 'loading',
-      });
-    },
     closeMessage() {
       setFeedback({
         show: false,
