@@ -1,0 +1,55 @@
+li {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.26);
+  border-radius: 0.1rem;
+  transition: all 0.2s;
+
+  &:hover {
+    scale: 105%;
+  }
+  .imgCont {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    max-height: 35%;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .shopName {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 2.7rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+  }
+  .shopInfo {
+    margin: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: normal;
+    border-top: 1px solid #dfdfdf;
+    padding: 2rem;
+    height: fit-content;
+  }
+
+  .description {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 2rem;
+  }
+  .town {
+    margin-bottom: 1.2rem;
+  }
+
+  .highlight {
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: #fff;
+  }
+}

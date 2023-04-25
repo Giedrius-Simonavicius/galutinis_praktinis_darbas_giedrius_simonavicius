@@ -1,0 +1,142 @@
+.mainHeader {
+  background: linear-gradient(
+    30deg,
+    #a77d7db6 0%,
+    #bac4c26b 30%,
+    #80865c6b 45%,
+    #694d196b 50%,
+    #68827d6b 75%,
+    #a77d7db6 100%
+  );
+  .userTxt{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+.user{
+  text-align: center;
+}
+  .head {
+    .container {
+      margin-right: 0;
+    }
+    .logo {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #555555ea;
+      transition: 0.2s;
+      display: flex;
+    }
+    .logo:hover {
+      color: #333;
+    }
+    .navigation {
+      font-size: 1.7rem;
+      color: #333;
+      font-weight: 500;
+      letter-spacing: 0.3rem;
+    }
+    .navItem {
+      padding: 2.5rem;
+      font-size: 1.7rem;
+      color: #333;
+      font-weight: 500;
+      letter-spacing: 0.3rem;
+      transition: all 0.2s;
+    }
+    .navItem:hover {
+      color: #ffffffce;
+      text-shadow: 1.5rem 1.7rem #00000084;
+    }
+    .navItem.active {
+      background-color: #858585;
+      color: #ffffffce;
+    }
+
+    .logoOur {
+      font-size: 2rem;
+      font-weight: 600;
+      align-self: end;
+    }
+    .ico1 {
+      font-size: 3rem;
+      margin-left: 1rem;
+      margin-right: 0.2rem;
+    }
+    .ico3 {
+      font-size: 3.5rem;
+      margin-right: 0.2rem;
+    }
+    .ico2 {
+      font-size: 2.8rem;
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .mainHeader .head .navItem {
+    font-size: 1rem;
+    padding: 2rem 0.7rem;
+  }
+  .mainHeader .head .logoOur {
+    font-size: 2rem;
+    font-weight: 600;
+    align-self: center;
+  }
+  
+  .mainHeader .head .ico1 {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-right: 0.2rem;
+  }
+  .mainHeader .head .ico3 {
+    font-size: 2.2rem;
+    margin-right: 0.2rem;
+  }
+  .mainHeader .head .ico2 {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+  }
+}
+.mainHeader .head .logo {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 670px) {
+  .mainHeader {
+    max-width: 61rem;
+  }
+  .mainHeader .head .navItem {
+    font-size: 1rem;
+  }
+  .mainHeader .head .container {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+  .mainHeader .head .logo {
+    font-size: 1.2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mainHeader .head .logoOur {
+    font-size: 1.2rem;
+  }
+  .mainHeader .head .ico1 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .mainHeader .head .ico3 {
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  .mainHeader .head .ico2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .mainHeader .head .navItem:hover {
+    text-shadow: none;
+  }
+}

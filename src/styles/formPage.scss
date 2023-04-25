@@ -1,0 +1,79 @@
+.mainForm {
+  background: linear-gradient(45deg, #2f4e6e 0%, #84451b 50%, #782058 100%);
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  min-height: 85vh;
+  display: grid;
+
+  .innerForm {
+    background-color: #efefef3e;
+    border-radius: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    max-width: 50rem;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 8rem;
+    font-size: 4rem;
+    color: white;
+    letter-spacing: 0.2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid white;
+    text-transform: uppercase;
+  }
+
+  .comment {
+    align-items: end;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    color: #333333c1;
+  }
+
+  .linkAfterComment {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    color: #582222;
+    font-style: italic;
+    transition: 0.2s;
+  }
+  .linkAfterComment:hover {
+    scale: 107%;
+    color: rgba(255, 255, 255, 0.534);
+  }
+
+  .unauthorised {
+    color: red;
+  }
+  .yellow {
+    color: yellow;
+  }
+  .red {
+    color: red;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+  .warning {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+
+  .or {
+    color: rgba(0, 0, 0, 0.445);
+    margin-bottom: 1.5rem;
+  }
+
+  .loginGoogle {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
