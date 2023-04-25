@@ -12,7 +12,7 @@ function Feedback() {
     <div className={`feedbackContainer ${type}`}>
       <p className="msg">{msg}</p>
       <button className="closeButton" onClick={handleClose}>
-        &times;
+        x
       </button>
     </div>
   ) : null;
