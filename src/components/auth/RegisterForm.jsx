@@ -43,7 +43,7 @@ function RegisterForm({ onUserRegistration }) {
         {formik.touched.email && formik.errors.email ? (
           <div className="errorMsg">{formik.errors.email}</div>
         ) : (
-          <div className="insvisible">insvisible</div>
+          <div className="insvisible"></div>
         )}
       </div>
       <div className="passDiv">
