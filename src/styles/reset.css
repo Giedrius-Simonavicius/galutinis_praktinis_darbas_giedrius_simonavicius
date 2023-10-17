@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+p,
+li,
+a,
+ul {
+  font-size: 1.6rem;
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* common rules */
+.container {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* utility classes */
+
+.flex {
+  display: flex;
+}
+
+.between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tac {
+  text-align: center;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+input,
+textarea,
+select {
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  width: 100%;
+  display: block;
+  margin-top: 1rem;
+  background-color: #ffffffb1;
+  border-radius: 1.5rem;
+  border: 0.1rem solid #fff;
+  color: #333;
+}
+
+button {
+  font-size: 1.6rem;
+  max-width: fit-content;
+  border-radius: 1.5rem;
+  padding: 1rem 4rem;
+  border: 0.1rem solid #ffffff77;
+  cursor: pointer;
+  background: linear-gradient(
+    60deg,
+    #955324f0 0%,
+    #972a49cb 50%,
+    #821657df 75%,
+    #791551df 100%
+  );
+  color: #ffffffb3;
+  transition: 0.2s;
+}
+button:hover {
+  background: linear-gradient(
+    120deg,
+    #791551df 0%,
+    #821657df 50%,
+    #972a49cb 75%,
+    #955324f0 100%
+  );
+  box-shadow: 5px 10px #595959;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  input,
+  textarea,
+  select {
+    width: 90%;
+    margin: auto;
+  }
+}
